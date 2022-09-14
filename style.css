@@ -1,0 +1,487 @@
+@import url('https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Luxurious Roman', cursive;
+}
+
+:root {
+    --heading: rgb(0, 10, 45);
+    --heading1: rgb(45, 0, 41);
+    --para: #777;
+    --pera-tint: #e4e4e4;
+    --white: #fff;
+    --pink: rgb(243, 91, 116);
+    --helper:rgb(124, 124, 32);
+    --helper-tint: #f3f4ff;
+    --bg: rgb(253, 253, 247);
+    --gradient: linear-gradient(0deg, rgb(132, 144, 255) 0%, rgb(98, 189, 252) 100%);
+    --gradient-support: -webkit-linear-gradient(0deg,
+            rgb(132, 144, 255) 0%,
+            rgb(98, 189, 252) 100%);
+    --gradient-support1: -webkit-linear-gradient(0deg,
+    rgb(124, 124, 32) 0%,
+    rgb(184, 184, 8) 100%);
+
+    --shadow: 0px 0px 20px 0px rgba(181, 255, 132, 0.2);
+    --box-shadow: 0px 20px 20px 0px rgba(49, 83, 25, 0.2);
+    --main-color: #443;
+    --border-radius: 95% 4% 97% 5%/4% 94% 3% 95%;
+    --border-radius-hover: 4% 95% 6% 95%/95% 4% 92% 5%;
+    --border: .2rem solid var(--main-color);
+    --border-hover: .2rem dashed var(--main-color);
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Luxurious Roman', cursive;
+}
+
+h1 {
+    color: var(--heading1);
+    font-size: 6rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+p {
+    color: var(--para);
+    line-height: 1.6;
+    font-size: 1.7rem;
+}
+
+.navbar .navbar-list li a{
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+/* reuseable code */
+.section {
+    padding: 6rem 0;
+}
+
+.grid {
+    display: grid;
+    gap: 6rem;
+}
+
+.grid-two-columns {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-three-columns {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-four-columns {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+ /* .btn {
+    background: var(--gradient-support1);
+    padding: 1.9rem 3rem;
+    border: none;
+    color: white;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+  
+
+} */
+
+.btns {
+    display: inline-block;
+    padding: .9rem 1.5rem;
+    border-radius: var(--border-radius);
+    color: var(--main-color);
+    background: none;
+    border: var(--border);
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+    text-decoration: none;
+}
+
+.btns:hover {
+    border-radius: var(--border-radius-hover);
+    border: var(--border-hover);
+    color: #777;
+}
+
+
+/* .btn:hover,
+.btn:active {
+    box-shadow: var(--box-shadow);
+} */
+
+.common-heading {
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin-bottom: 5rem;
+    text-transform: capitalize;
+    position: relative;
+}
+
+/* .common-heading::before {
+    content: '';
+    position: absolute;
+    top: 115%;
+    left: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--helper);
+    border-radius: 50%;
+} */
+
+/* .common-heading::after {
+    content: '';
+    position: absolute;
+    top: 124%;
+    left: 1.5rem;
+    min-width: 20rem;
+    height: .3rem;
+    background: var(--helper);
+} */
+
+/* header section */
+
+.header {
+    padding: 0 4.8rem;
+    height: 8rem;
+    background-color: var(--bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .logo {
+    height: 3rem;
+    font-size: 2rem;
+}
+
+.navbar-list {
+    display: flex;
+    gap: 3.8rem;
+}
+
+.navbar-link:link,
+.navbar-link:visited {
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: black;
+    text-transform: uppercase;
+    transition: color 0.3s linear;
+}
+.navbar-link:hover,
+.navbar-link:after {
+    color: var(--helper);
+}
+
+.mobile-navbar-btn {
+    display: none;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+
+.mobile-navbar-icon[name="close-outline"] {
+    display: none;
+}
+
+
+/* hero section start */
+.section-hero {
+    background-color: var(--bg);
+}
+
+.section-hero-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.hero-top-data {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--helper);
+
+}
+
+.hero-heading {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 5rem;
+}
+
+.hero-para {
+    margin-top: 1.4rem;
+    margin-bottom: 3rem;
+    max-width: 60rem;
+}
+
+.section-hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-img {
+    max-width: 80%;
+    border-radius: 70%;
+
+}
+
+/* * about start */ */
+
+.about .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.about .row .img {
+    flex: 1 1 42rem;
+}
+
+.about .row .img img {
+    width: 100%;
+    animation: aboutImage 4s linear infinite;
+}
+
+@keyframes aboutImage {
+
+    0%,
+    100% {
+        transform: scale(.5);
+        border-radius: var(--border-radius-hover);
+    }
+
+    50% {
+        transform: scale(.7);
+        border-radius: var(--border-radius);
+    }
+}
+
+.heading {
+    font-size: 7rem;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: .05rem var(--main-color);
+    letter-spacing: .2rem;
+    text-align: center;
+    position: relative;
+
+}
+
+.heading span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    color: var(--main-color);
+    font-size: 3rem;
+}
+
+.about .row .content {
+    flex: 1 1 42rem;
+}
+
+.about .row .content .title {
+    color: var(--main-color);
+    font-size: 1rem;
+    font-weight: bolder;
+    line-height: 1.7;
+}
+
+.about .row .content p {
+    color: var(--main-color);
+    font-size: 1.3rem;
+    line-height: 1.8;
+    padding: 1rem 0;
+}
+
+.about .row .content .icons-containers {
+    display: flex;
+    flex-wrap: wrap;
+    flex-wrap: 1rem;
+    padding-top: 3rem;
+}
+
+.about .row .content .icons-containers .icons {
+    flex: 1 1 15rem;
+    padding: 1.5rem;
+    text-align: center;
+    border: var(--border);
+    border-radius: var(--border-radius);
+}
+
+.about .row .content .icons-containers .icons .icon {
+    height: 3rem;
+    width: 7rem;
+}
+
+
+.about .row .content .icons-containers .icons h3 {
+    font-size: 1.7rem;
+    padding-top: 1rem;
+    color: var(--main-color);
+}
+
+
+/* about section start */
+.bio-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+.bio-img img {
+    width: 60%;
+    /* box-shadow: -2rem -2rem 0 0 var(--helper); */
+    display: inline-block;
+}
+
+.bio-data-states {
+    display: flex;
+    padding: 5.4rem 0;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.bio-states h3 {
+    margin-bottom: 1rem;
+
+}
+
+.bio-progress-bar {
+    width: 70%;
+    height: 0.8rem;
+    background-color: var(--pera-tint);
+    border-radius: 10rem;
+    position: relative;
+    box-shadow: var(--shadow);
+
+}
+
+.bio-progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: inherit;
+    background: var(--gradient-support1);
+    border-radius: 10rem;
+}
+
+.bio-progress::before {
+    width: 70%;
+}
+
+.bio-progress-1::before {
+    width: 99%;
+}
+
+.bio-progress-2::before {
+    width: 60%;
+}
+
+.bio-progress-3::before {
+    width: 50%;
+
+}
+
+.bio-progress-4::before {
+    width: 40%;
+}
+
+.bio-progress-bar span {
+    position: absolute;
+    top: 1.3rem;
+    width: 3rem;
+    height: 1.3rem;
+    background-color: var(--helper);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: 0;
+}
+
+.bio-progress-bar span {
+    left: 75%;
+}
+
+.bio-progress span {
+    left: 66%;
+}
+
+.bio-progress-1 span {
+    left: 95%;
+}
+
+.bio-progress-2 span {
+    left: 56%;
+}
+
+.bio-progress-3 span {
+    left: 46%;
+}
+
+.bio-progress-4 span {
+    left: 36%;
+}
+
+/*  create a caret*/
+.bio-progress-bar span::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 0.6rem solid var(--helper);
+    border-color: transparent;
+    border-bottom-color: var(--helper);
+    top: -1rem;
+
+}
+
+
+
+
