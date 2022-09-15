@@ -14,18 +14,19 @@
     --pera-tint: #e4e4e4;
     --white: #fff;
     --pink: rgb(243, 91, 116);
-    --helper:rgb(124, 124, 32);
+    --helper: rgb(253, 253, 224);
     --helper-tint: #f3f4ff;
-    --bg: rgb(253, 253, 247);
+    --bg: rgb(247, 246, 243);
     --gradient: linear-gradient(0deg, rgb(132, 144, 255) 0%, rgb(98, 189, 252) 100%);
     --gradient-support: -webkit-linear-gradient(0deg,
             rgb(132, 144, 255) 0%,
             rgb(98, 189, 252) 100%);
     --gradient-support1: -webkit-linear-gradient(0deg,
-    rgb(124, 124, 32) 0%,
-    rgb(184, 184, 8) 100%);
+            rgb(124, 124, 32) 0%,
+            rgb(184, 184, 8) 100%);
 
     --shadow: 0px 0px 20px 0px rgba(181, 255, 132, 0.2);
+    --shadow1: 0px 0px 20px 0px rgba(100, 202, 22, 0.2);
     --box-shadow: 0px 20px 20px 0px rgba(49, 83, 25, 0.2);
     --main-color: #443;
     --border-radius: 95% 4% 97% 5%/4% 94% 3% 95%;
@@ -67,7 +68,7 @@ p {
     font-size: 1.7rem;
 }
 
-.navbar .navbar-list li a{
+.navbar .navbar-list li a {
     text-decoration: none;
 }
 
@@ -102,7 +103,7 @@ li {
     margin: 0 auto;
 }
 
- /* .btn {
+/* .btn {
     background: var(--gradient-support1);
     padding: 1.9rem 3rem;
     border: none;
@@ -204,6 +205,7 @@ li {
     text-transform: uppercase;
     transition: color 0.3s linear;
 }
+
 .navbar-link:hover,
 .navbar-link:after {
     color: var(--helper);
@@ -265,9 +267,8 @@ li {
 
 }
 
-/* * about start */ */
-
-.about .row {
+/* * about start */
+*/ .about .row {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -275,7 +276,7 @@ li {
 }
 
 .about .row .img {
-    flex: 1 1 42rem;
+    flex: 1 1 49rem;
 }
 
 .about .row .img img {
@@ -287,12 +288,12 @@ li {
 
     0%,
     100% {
-        transform: scale(.5);
+        transform: scale(.7);
         border-radius: var(--border-radius-hover);
     }
 
     50% {
-        transform: scale(.7);
+        transform: scale(.8);
         border-radius: var(--border-radius);
     }
 }
@@ -365,16 +366,40 @@ li {
 
 
 /* about section start */
+
+.section-bio {
+    /* background: url('image/book-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; */
+    background-color: var(--bg);
+}
+
+
 .bio-img {
     display: flex;
     justify-content: center;
     align-items: center;
-} 
+}
 
 .bio-img img {
     width: 60%;
     /* box-shadow: -2rem -2rem 0 0 var(--helper); */
     display: inline-block;
+    height: 35rem;
+    animation: float 4s linear infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0rem);
+    }
+
+    50% {
+        transform: translateY(-7rem);
+    }
 }
 
 .bio-data-states {
@@ -437,7 +462,8 @@ li {
     width: 3rem;
     height: 1.3rem;
     background-color: var(--helper);
-    color: var(--white);
+    color: black;
+    font-weight: bolder;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -483,5 +509,432 @@ li {
 }
 
 
+/* our services section start */
 
+.section-services {
+    transition: all 0.7s linear;
+}
+
+.section-services p {
+    max-width: 50rem;
+}
+
+.section-services .grid {
+    margin-top: 10rem;
+
+}
+
+.service-box {
+    text-align: center;
+    box-shadow: var(--shadow1);
+    border-radius: 5px;
+    padding: 6.4rem 3rem;
+    transition: all 0.2s linear;
+}
+
+.service-box:hover,
+.service-box:active {
+    transform: translateY(-3rem);
+
+}
+
+.service-icon {
+    width: 7rem;
+    height: 7rem;
+    background-color: rgb(247, 247, 185) ;
+    display: inline-block;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    padding: 1.3rem 1.6rem;
+    position: relative;
+    color: var(--heading1);
+    animation: water-wave 3s linear infinite;
+}
+
+.service-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90%;
+    border-radius: 20% 80% 69% 31% / 48% 46% 54% 52%;
+    background: transparent;
+    border: 1px solid black;
+    animation: water-wave 3s linear infinite;
+}
+
+@keyframes water-wave {
+    0% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+
+    }
+
+    50% {
+        border-radius: 64% 36% 23% 77% / 30% 19% 81% 70%;
+    }
+
+    100% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+
+    }
+}
+
+.service-box h3 {
+    text-transform: capitalize;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: bolder;
+}
+
+
+/* portfolio start */
+
+.section-portfolio {
+    background: var(--bg);
+    transition: all 0.7s linear;
+}
+
+.section-portfolio p {
+    max-width: 50rem;
+}
+
+.p-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin: 5.4rem;
+}
+
+.portfolio-images {
+    gap: 3rem;
+    margin-top: 5.4rem;
+}
+
+.portfolio-images img {
+    width: 100%;
+    border-radius: 7px;
+    position: relative;
+    overflow: hidden;
+}
+
+.img-overlay {
+    position: relative;
+    overflow: hidden;
+}
+
+.img-overlay .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-support1);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(100%);
+    transition: all 0.3s linear;
+    border-radius: 7px;
+}
+
+.img-overlay:hover>.overlay {
+    transform: translateY(0);
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.img-overlay .common-heading {
+    margin: 0;
+    color: var(--white);
+    text-decoration: none;
+
+}
+
+/* .p-btn:hover {
+    transform: translateY(-1rem);
+
+} */
+
+.p-btn-active {
+    transform: translateY(-1rem);
+}
+
+/* .p-img-hidden-active {
+    display: none;
+} */
+
+
+/* work data counter */
+.section-work-data {
+    background: var(--gradient-support1);
+    text-align: center;
+    transition: all 0.7s linear;
+    color: var(--white);
+}
+
+.counter-numbers {
+    font-size: 3.8rem;
+}
+
+.section-work-data p {
+    color: var(--white);
+    text-transform: capitalize;
+}
+
+
+/* swiper testimonial start */
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-client-message {
+    padding: 4rem 6rem;
+    background: var(--white);
+    border-radius: 1rem;
+    text-align: left;
+    box-shadow: var(--shadow);
+    position: relative;
+}
+
+.swiper-client-message::before {
+    content: '';
+    position: absolute;
+    bottom: -7rem;
+    left: 40%;
+    border: 3rem solid var(--white);
+    border-color: transparent;
+    border-top-color: #f8f4f6;
+    transform: translateX(-80%);
+}
+
+.swiper-client-message p::before {
+    content: '\f10d';
+    position: absolute;
+    top: 0;
+    left: 5%;
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 4rem;
+    color: #e8f7dd;
+}
+
+.swiper-client-message p::after {
+    content: '\f10e';
+    position: absolute;
+    bottom: 0;
+    right: 5rem;
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    font-size: 4rem;
+    color: #ddf7de;
+}
+
+.swiper-client-data {
+    align-items: center;
+    margin-top: 3rem;
+    gap: 1rem;
+
+}
+
+.swiper-slide img {
+    max-width: 7rem;
+    height: 7rem;
+    border-radius: 40%;
+    border: .5rem solid var(--helper-tint);
+}
+
+
+/* freelancing design (Paralex effect design) */
+
+.section-freelancing {
+    background-image: url('image/camera.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    position: relative;
+    transition: all 0.7s linear;
+    text-align: center;
+}
+
+.section-freelancing .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(11, 27, 1);
+    opacity: 0.6;
+
+}
+
+.section-freelancing .container {
+    position: relative;
+}
+
+.section-freelancing h2 {
+    font-size: 4rem;
+    font-weight: bolder;
+
+}
+
+.section-freelancing span {
+    color: greenyellow;
+}
+
+.section-freelancing h2,
+.section-freelancing p {
+    color: var(--white);
+    margin-bottom: 1rem;
+
+}
+
+
+/* booking */
+
+.book {
+    background: url('image/book-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.book form {
+    margin: 0 auto 2rem auto;
+    max-width: 60rem;
+    border-radius: var(--border-radius-hover);
+    padding: 3rem;
+    border: var(--border);
+}
+
+.book form .box {
+    width: 100%;
+    padding: 1rem;
+    border-radius: .5rem;
+    font-size: 1.6rem;
+    background: none;
+    text-transform: none;
+    color: #443;
+    border: var(--border);
+    margin: .7rem 0;
+}
+
+.book form .box:focus {
+    border: var(--border-hover);
+}
+
+.book form textarea {
+    height: 15rem;
+    resize: none;
+}
+
+
+
+/* section footer */
+
+.section-footer {
+    background: #443;
+    transition: all 0.6s linear;
+}
+
+.section-footer h3 {
+    color: #e4e4e4;
+    margin-bottom: 3rem;
+
+}
+
+.f-about p {
+    color: #e4e4e4;
+}
+
+.f-links ul,
+.f-services ul,
+.f-address address {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    justify-content: center;
+
+}
+
+.f-links li,
+.f-links a,
+.f-services li,
+.f-services a {
+    font-size: 1.4rem;
+    color: #e4e4e4;
+    text-transform: capitalize;
+}
+
+.f-links span,
+.f-services span,
+.f-address span {
+    margin-right: 1rem;
+}
+
+.f-services p,
+.f-address p a {
+    font-style: normal;
+    color: rgb(192, 189, 189);
+}
+
+.f-social-icons {
+    text-align: center;
+    margin: 4rem 0;
+    color: rgb(184, 178, 178);
+}
+
+.f-social-icons .icons {
+    width: 3rem;
+    height: 3rem;
+    background-color: rgb(170, 164, 164);
+    display: inline-block;
+    padding: 1.4rem 1.8rem;
+    position: relative;
+    color: var(--heading1);
+    animation: water-wave 3s linear infinite;
+    cursor: pointer;
+}
+
+.f-credits p {
+    text-align: center;
+    color: rgb(184, 178, 178);
+}
+
+.footer a:hover,
+footer a:active {
+    color: var(--white);
+}
 
